@@ -22,6 +22,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
+# Parts
+$(call inherit-product-if-exists, packages/apps/RealmeParts/parts.mk)
+
 PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Call proprietary blob setup
@@ -45,6 +48,10 @@ PRODUCT_EXTRA_VNDK_VERSIONS := 30
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     Settings \
     SystemUI
+
+# DT2W
+PRODUCT_PACKAGES += \
+    DT2W-Service-RMX3381
 
 # fastbootd
 PRODUCT_PACKAGES += \
@@ -71,7 +78,8 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
     init.mt6833.rc \
-    fstab.mt6833
+    fstab.mt6833 \
+    perf_profile.sh
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
