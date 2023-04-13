@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/realme/RMX3031
+DEVICE_PATH := device/realme/RMX3381
 
 # Installs gsi keys into ramdisk, to boot a GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
@@ -28,7 +28,7 @@ $(call inherit-product-if-exists, packages/apps/RealmeParts/parts.mk)
 PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Call proprietary blob setup
-$(call inherit-product-if-exists, vendor/realme/RMX3031/RMX3031-vendor.mk)
+$(call inherit-product-if-exists, vendor/realme/RMX3381/RMX3381-vendor.mk)
 
 # Dynamic Partition
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -48,9 +48,6 @@ PRODUCT_EXTRA_VNDK_VERSIONS := 30
 PRODUCT_PACKAGES += \
     audio.a2dp.default
 
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_EXTRA_VNDK_VERSIONS)/etc/audio_policy_configuration.xml
-
 # Dex
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     Settings \
@@ -59,13 +56,6 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
-
-# Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.RMX3031
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.fingerprint.xml
 
 # Freeform Multiwindow
 PRODUCT_COPY_FILES += \
@@ -83,24 +73,13 @@ PRODUCT_PACKAGES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    init.mt6893.rc \
-    fstab.mt6893 \
+    init.mt6833.rc \
+    fstab.mt6833 \
     perf_profile.sh
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/keylayout/touchpanel.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/touchpanel.kl
-
-# NFC
-PRODUCT_PACKAGES += \
-    com.android.nfc_extras \
-    com.gsma.services.nfc  \
-    NfcNci \
-    SecureElement \
-    Tag
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/libnfc-nxp.conf
 
 # Screen density
 PRODUCT_AAPT_CONFIG := xxxhdpi
@@ -108,7 +87,7 @@ PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.RMX3031
+    android.hardware.light@2.0-service.RMX3381
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \

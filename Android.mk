@@ -16,7 +16,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),RMX3031)
+ifeq ($(TARGET_DEVICE),RMX3381)
 
 $(call add-radio-file,releasetools/dynamic-remove-oplus)
 
