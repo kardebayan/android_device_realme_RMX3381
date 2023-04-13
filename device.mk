@@ -17,7 +17,7 @@
 DEVICE_PATH := device/realme/RMX3381
 
 # Installs gsi keys into ramdisk, to boot a GSI with verified boot.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
@@ -28,7 +28,7 @@ $(call inherit-product-if-exists, packages/apps/RealmeParts/parts.mk)
 PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Call proprietary blob setup
-$(call inherit-product-if-exists, vendor/realme/RMX3381/RMX3381-vendor.mk)
+#$(call inherit-product-if-exists, vendor/realme/RMX3381/RMX3381-vendor.mk)
 
 # Dynamic Partition
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -43,10 +43,6 @@ AB_OTA_UPDATER := false
 
 # VNDK
 PRODUCT_EXTRA_VNDK_VERSIONS := 30
-
-# Audio
-PRODUCT_PACKAGES += \
-    audio.a2dp.default
 
 # Dex
 PRODUCT_DEXPREOPT_SPEED_APPS += \
@@ -111,23 +107,6 @@ PRODUCT_SOONG_NAMESPACES += \
 # System prop
 -include $(DEVICE_PATH)/system_prop.mk
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
-
-# Symbols
-PRODUCT_PACKAGES += \
-    libshim_vtservice
-
-# Telephony
-PRODUCT_BOOT_JARS += \
-    mediatek-common \
-    mediatek-framework \
-    mediatek-ims-base \
-    mediatek-ims-common \
-    mediatek-telecom-common \
-    mediatek-telephony-base \
-    mediatek-telephony-common
-
-PRODUCT_PACKAGES += \
-    ImsServiceBase
 
 # Wi-Fi
 PRODUCT_PACKAGES += \

@@ -22,10 +22,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/realme/RMX3381/device.mk)
 
 # Inherit some common Pixel-Experience stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/arrow/config/common.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := aosp_RMX3381
+PRODUCT_NAME := arrow_RMX3381
 PRODUCT_DEVICE := RMX3381
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := Realme 8s 5G
@@ -42,4 +42,3 @@ PRODUCT_GMS_CLIENTID_BASE := android-oppo
 
 # Target
 TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_SUPPORTS_QUICK_TAP := true
