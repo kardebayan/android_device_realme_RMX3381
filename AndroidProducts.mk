@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_RMX3381.mk
+    $(LOCAL_DIR)/arrow_RMX3381.mk
