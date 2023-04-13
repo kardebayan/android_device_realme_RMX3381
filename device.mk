@@ -44,10 +44,6 @@ AB_OTA_UPDATER := false
 # VNDK
 PRODUCT_EXTRA_VNDK_VERSIONS := 30
 
-# Audio
-PRODUCT_PACKAGES += \
-    audio.a2dp.default
-
 # Dex
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     Settings \
