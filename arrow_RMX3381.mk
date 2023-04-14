@@ -26,9 +26,9 @@ $(call inherit-product, vendor/arrow/config/common.mk)
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := arrow_RMX3381
-PRODUCT_DEVICE := RMX3381
+PRODUCT_DEVICE := RE58A0L1
 PRODUCT_BRAND := realme
-PRODUCT_MODEL := Realme 8s 5G
+PRODUCT_MODEL := RMX3381
 PRODUCT_MANUFACTURER := realme
 
 # Build info
