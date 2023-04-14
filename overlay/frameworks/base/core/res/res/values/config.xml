@@ -110,6 +110,9 @@
     <!-- The restoring is handled by modem if it is true-->
     <bool name="skip_restoring_network_selection">true</bool>
 
+    <!-- Whether to show Smooth Display feature in Settings Options -->
+    <bool name="config_show_refresh_rate_controls">true</bool>
+
     <!-- Array of desired screen brightness in nits corresponding to the lux values
          in the config_autoBrightnessLevels array. As with config_screenBrightnessMinimumNits and
          config_screenBrightnessMaximumNits, the display brightness is defined as the measured
