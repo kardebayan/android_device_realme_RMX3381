@@ -391,6 +391,9 @@
     <!-- Smart charging -->
     <bool name="config_smartChargingAvailable">true</bool>
 
+    <!-- Fingerprint from stock ROM -->
+    <string name="config_stockFingerprint" translatable="false">realme/RMX3381/RE58A0L1:11/RP1A.200720.011/1655960584417:user/release-keys</string>
+
     <!-- Smart charging -->
     <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/mmi_charging_enable</string>
     <string name="config_SmartChargingSuspendValue" translatable="false">1</string>
